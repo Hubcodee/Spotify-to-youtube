@@ -1,5 +1,7 @@
 from flask import Flask, render_template
+import requests
 
+from youtube_downloader import YouTubeDownloader
 app = Flask(__name__)
 
 @app.route('/')
@@ -8,9 +10,8 @@ def home():
 
 @app.route('/convert')
 def convert():
-    playlist = request.form.get("playlist")
+    playlist = requests.form.get("playlist")
     
-     
     return render_template('index.html')
 
 
