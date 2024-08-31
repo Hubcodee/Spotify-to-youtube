@@ -1,14 +1,15 @@
-from flask import Flask, render_template
-import requests
+from flask import Flask, render_template, request
+import requests 
 
 from youtube_downloader import YouTubeDownloader as ytd
+
 app = Flask(__name__)
 
 @app.route('/')
 def home():
     return render_template('index.html')
 
-@app.route('/convert')
+@app.route('/convert', methods=['POST'])
 def convert():
     playlist_url = requests.form.get("playlist")
     playlist_id = playlist_url.split('/')[-1].split('?')[0]
