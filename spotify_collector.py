@@ -1,4 +1,4 @@
-import spotipy
+import spotify_collector
 from spotipy.oauth2 import SpotifyClientCredentials
 
 # Set up your Spotify credentials
@@ -7,7 +7,7 @@ client_secret = '3d00001e4ba14ba68c9a0c7c9af332e3'
 
 # Authenticate
 auth_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
-sp = spotipy.Spotify(auth_manager=auth_manager)
+sp = spotify_collector.Spotify(auth_manager=auth_manager)
 
 # Function to get all song names from a playlist
 def get_playlist_tracks(playlist_id):
