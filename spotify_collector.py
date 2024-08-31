@@ -21,11 +21,3 @@ class SpotifyPlaylist:
         track_names = [track['track']['name'] for track in tracks]
         return tuple(track_names)
 
-# Spotify playlist URL
-playlist_url = 'https://open.spotify.com/playlist/3DuzHWBRJN4VMir60nB9vn'
-playlist_id = playlist_url.split('/')[-1].split('?')[0]
-
-spotify_playlist_obj = SpotifyPlaylist()
-# Get all song names
-song_names = spotify_playlist_obj.get_playlist_tracks(playlist_id)
-print(song_names)
